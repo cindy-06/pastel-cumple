@@ -139,8 +139,13 @@
     document.querySelectorAll(".candle").forEach((candle) => {
     candle.classList.add("blown");
   });
+      document.getElementById("bgMusic").play();
 }
       startMicDetection();
     </script>
+    <audio id="bgMusic" loop>
+  <source src="birthdaySong.mp3" type="audio/mpeg">
+</audio>
+    
   </body>
 </html>
