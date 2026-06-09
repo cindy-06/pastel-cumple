@@ -27,6 +27,21 @@
     </style>
   </head>
   <body>
+    <button
+  id="startBtn"
+  style="
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 99999;
+    padding: 12px 20px;
+    background: white;
+    border: 2px solid black;
+    font-size: 18px;
+  "
+>
+  <3
+</button>
     <div class="container">
       <div id="birthdayText"></div>
       <div class="cake-container">
@@ -141,11 +156,26 @@
   });
       document.getElementById("bgMusic").play();
 }
-      startMicDetection();
+      const startBtn = document.getElementById("startBtn");
+
+startBtn.addEventListener("click", async () => {
+  try {
+    await document.getElementById("bgMusic").play();
+
+    startBtn.style.display = "none";
+
+    startMicDetection();
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+      
     </script>
     <audio id="bgMusic" loop>
   <source src="birthdaySong.mp3" type="audio/mpeg">
 </audio>
+    
     
   </body>
 </html>
